@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIXELART</title>
+</head>
+<body>
+    <header>
+        <h1 class="titulo">PIXEL ART</h1>
+        <div class="botones">
+            <button style="background-color: green;" onclick="modo = 'verde'"></button>
+            <button style="background-color: red;" onclick="modo = 'rojo'"></button>
+            <button style="background-color: blue;" onclick="modo = 'azul'"></button>
+            <button style="background-color: yellow;" onclick="modo = 'amarillo'"></button>
+            <button style="background-color: orange;" onclick="modo = 'naranja'"></button>
+            <button style="background-color: purple;" onclick="modo = 'morado'"></button>
+            <button style="background-color: darkblue;" onclick="modo = 'azulO'"></button>
+            <button style="background-color: darkgreen;" onclick="modo = 'verdeO'"></button>
+            <button style="background-color: cyan;" onclick="modo = 'celeste'"></button>
+            <button style="background-color: darkcyan;" onclick="modo = 'celesteO'"></button>
+            <button style="background-color: gold;" onclick="modo = 'dorado'"></button>
+            <button style="background-color: goldenrod;" onclick="modo = 'doradoO'"></button>
+            <button style="background-color: darkgray;" onclick="modo = 'grisO'"></button>
+            <button style="background-color: gray;" onclick="modo = 'gris'"></button>
+            <button style="background-color: darkorange;" onclick="modo = 'naranjaO'"></button>
+            <button style="background-color: darkred;" onclick="modo = 'rojoO'"></button>
+            <button style="background-color: pink;" onclick="modo = 'rosa'"></button>
+            <button style="background-color: lightcoral;" onclick="modo = 'rosaO'"></button>
+            <button style="background-color: lightcyan;" onclick="modo = 'celesteC'"></button>
+            <button style="background-color: lightgreen;" onclick="modo = 'verdeC'"></button>
+            <button style="background-color: black;" id="lapiz" onclick="modo = 'lapiz'"></button>
+            <button id="borrador" onclick="modo = 'borrador'">
+                <img src="goma.png" alt="">
+            </button>
+        </div>
+    </header>
+    <div class="inline">
+        <div class="contenedor">
+
+        </div>
+    </div>
+    
+    
+</body>
+    <script>
+    let color = "black";
+    let modo = "lapiz";
+
+    window.onload = function () {
+        const contenedor = document.querySelector(".contenedor");
+
+        for (let i = 0; i < 1876; i++) {
+            const div = document.createElement("div");
+            div.classList.add("pixel");
+
+            div.addEventListener("click", function () {
+                if (modo === "lapiz") {
+                    div.style.backgroundColor = color;
+                } else if (modo === "borrador") {
+                    div.style.backgroundColor = "aliceblue";
+                } else if (modo === "verde") {
+                    div.style.backgroundColor = "green";
+                } else if (modo === "rojo") {
+                    div.style.backgroundColor = "red";
+                } else if (modo === "azul") {
+                    div.style.backgroundColor = "blue";
+                } else if (modo === "amarillo") {
+                    div.style.backgroundColor = "yellow";
+                } else if (modo === "naranja") {
+                    div.style.backgroundColor = "orange";
+                } else if (modo === "morado") {
+                    div.style.backgroundColor = "purple";
+                } else if (modo === "azulO") {
+                    div.style.backgroundColor = "darkblue";
+                } else if (modo === "verdeO") {
+                    div.style.backgroundColor = "darkgreen";
+                } else if (modo === "celeste") {
+                    div.style.backgroundColor = "cyan";
+                } else if (modo === "celesteO") {
+                    div.style.backgroundColor = "darkcyan";
+                } else if (modo === "dorado") {
+                    div.style.backgroundColor = "gold";
+                } else if (modo === "doradoO") {
+                    div.style.backgroundColor = "goldenrod";
+                } else if (modo === "grisO") {
+                    div.style.backgroundColor = "darkgray";
+                } else if (modo === "gris") {
+                    div.style.backgroundColor = "gray";
+                } else if (modo === "naranjaO") {
+                    div.style.backgroundColor = "darkorange";
+                } else if (modo === "rojoO") {
+                    div.style.backgroundColor = "darkred";
+                } else if (modo === "rosa") {
+                    div.style.backgroundColor = "pink";
+                } else if (modo === "rosaO") {
+                    div.style.backgroundColor = "lightcoral";
+                } else if (modo === "celesteC") {
+                    div.style.backgroundColor = "lightcyan";
+                } else if (modo === "verdeC") {
+                    div.style.backgroundColor = "lightgreen";
+                }
+            });
+
+            contenedor.appendChild(div);
+        }
+    };
+</script>
+
+    <style>
+        .pixel {
+            background-color: aliceblue;
+            border: 2px solid black;
+            width: 20px;
+            height: 20px;
+            box-sizing: border-box;
+        }
+         .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            width: 99vw;
+            height: 90vh;
+            border: 5px solid rgb(177, 89, 22);
+            background-color: rgb(177, 89, 22);
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+        .titulo{
+            display: inline;
+            font-size: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .inline{
+            display: inline-block;
+        }
+        header{  
+            display: flex;
+            background-color: rgb(177, 89, 22);
+            border: 5px solid rgb(48, 24, 5);
+            justify-content: space-between;
+        }
+        button{
+            width: 40px;
+            height: 40px;
+            display: flex;
+        }
+        .botones{
+            display: flex;
+            gap: 10px;
+            margin-right: 30px;
+            margin-top: 20px;
+        }
+    </style>
+</html>
